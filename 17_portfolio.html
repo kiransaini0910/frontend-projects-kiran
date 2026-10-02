@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiran Saini | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="17_style.css">
+</head>
+<body>
+
+  <!-- 1. FLEXBOX NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Kiran<span>.dev</span></div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- 2. HERO SECTION -->
+  <section class="hero" id="about">
+    <div class="hero-content">
+      <span class="badge">Aspirational Web Developer</span>
+      <h1>Hi, I'm <span class="highlight">Kiran Saini</span></h1>
+      <p>Building modern, responsive, and high-performance web applications using HTML5, CSS3, Flexbox, and Grid.</p>
+      <a href="#contact" class="btn">Get In Touch</a>
+    </div>
+  </section>
+
+  <!-- 3. RESPONSIVE GRID SKILLS SECTION -->
+  <section class="section" id="skills">
+    <h2 class="section-title">My Tech Stack</h2>
+    <div class="grid-container">
+      <div class="card">
+        <h3>HTML5</h3>
+        <p>Semantic Layouts, Forms, Validation, and Tables.</p>
+      </div>
+      <div class="card">
+        <h3>CSS3</h3>
+        <p>Box Model, Transitions, Animations, and Styling.</p>
+      </div>
+      <div class="card">
+        <h3>Flexbox & Grid</h3>
+        <p>1D and 2D Responsive Page Structure & Alignments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PROJECTS SECTION -->
+  <section class="section" id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="grid-container">
+      <div class="card project-card">
+        <h3>Interactive Form</h3>
+        <p>Validation-enabled multi-input structured HTML form.</p>
+      </div>
+      <div class="card project-card">
+        <h3>Pricing Dashboard</h3>
+        <p>Flexbox-driven 3-card pricing layout with hover effects.</p>
+      </div>
+      <div class="card project-card">
+        <h3>Responsive Gallery</h3>
+        <p>CSS Grid-based gallery auto-adjusting for Mobile & Desktop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CONTACT FORM SECTION -->
+  <section class="section contact-section" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" placeholder="Your message..." required></textarea>
+      </div>
+      <button type="submit" class="btn submit-btn">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 Kiran Saini. Built with HTML5 & CSS3.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 10 - CSS Frameworks & Utility Classes</title>
+  
+  <!-- TAILWIND CSS CDN (Framework link) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen p-8">
+
+  <!-- CONTAINER -->
+  <div class="max-w-4xl mx-auto text-center">
+    
+    <!-- HEADER -->
+    <h1 class="text-4xl font-extrabold text-sky-400 mb-2">Tailwind CSS Utility Power</h1>
+    <p class="text-slate-400 mb-8">Building modern UI 5x faster without writing a single line of custom CSS file!</p>
+
+    <!-- RESPONSIVE GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      
+      <!-- CARD 1 -->
+      <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+        <h3 class="text-xl font-bold text-sky-400 mb-2">Utility Classes</h3>
+        <p class="text-slate-400 text-sm">Styles directly in HTML like <code class="bg-slate-900 px-2 py-1 rounded text-sky-300">p-6 bg-slate-800</code>.</p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+        <h3 class="text-xl font-bold text-sky-400 mb-2">Instant Responsive</h3>
+        <p class="text-slate-400 text-sm">Media queries made easy with prefixes like <code class="bg-slate-900 px-2 py-1 rounded text-sky-300">md:grid-cols-3</code>.</p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:-translate-y-2 transition-transform duration-300 shadow-lg">
+        <h3 class="text-xl font-bold text-sky-400 mb-2">Zero CSS Overhead</h3>
+        <p class="text-slate-400 text-sm">No switching back and forth between HTML and CSS files.</p>
+      </div>
+
+    </div>
+
+    <!-- ACTION BUTTON -->
+    <button class="bg-sky-600 hover:bg-sky-500 text-white font-bold py-3 px-8 rounded-lg shadow-md transition-colors duration-200">
+      Framework Mastered!
+    </button>
+
+  </div>
+
+</body>
+</html>

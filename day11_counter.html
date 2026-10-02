@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 11 Practice - JS Interactive Counter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl max-w-sm w-full text-center shadow-2xl">
+    <span class="text-xs font-bold text-sky-400 bg-sky-500/10 px-3 py-1 rounded-full uppercase tracking-wider">
+      JS Counter App
+    </span>
+
+    <!-- Counter Display Value -->
+    <h1 id="counter-value" class="text-6xl font-extrabold my-8 text-white transition-all duration-300">
+      0
+    </h1>
+
+    <!-- Action Buttons Grid -->
+    <div class="grid grid-cols-3 gap-3">
+      <button id="btn-decrease" class="bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 rounded-xl transition duration-200 active:scale-95">
+        -1
+      </button>
+
+      <button id="btn-reset" class="bg-slate-700 hover:bg-slate-600 text-slate-200 font-bold py-3 rounded-xl transition duration-200 active:scale-95">
+        Reset
+      </button>
+
+      <button id="btn-increase" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl transition duration-200 active:scale-95">
+        +1
+      </button>
+    </div>
+  </div>
+
+  <script src="day11_counter.js"></script>
+</body>
+</html>

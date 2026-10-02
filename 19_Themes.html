@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 9 - CSS Variables & Theme Switcher</title>
+  <style>
+    /* UNIVERSAL RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* DEFAULT DARK THEME VARIABLES */
+    :root {
+      --bg-main: #0f172a;
+      --bg-card: #1e293b;
+      --border-color: #334155;
+      --text-main: #f8fafc;
+      --text-sub: #94a3b8;
+      --primary-color: #38bdf8;
+      --primary-btn: #0284c7;
+    }
+
+    /* LIGHT THEME OVERRIDES */
+    [data-theme="light"] {
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --text-main: #0f172a;
+      --text-sub: #64748b;
+      --primary-color: #0284c7;
+      --primary-btn: #0369a1;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 40px 20px;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .theme-switch-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+      max-width: 1000px;
+      margin: 0 auto 30px auto;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .theme-switch {
+      display: inline-block;
+      height: 28px;
+      position: relative;
+      width: 50px;
+    }
+
+    .theme-switch input {
+      display: none;
+    }
+
+    .slider {
+      background-color: #334155;
+      bottom: 0;
+      cursor: pointer;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: .4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      background-color: #fff;
+      bottom: 3px;
+      content: "";
+      height: 22px;
+      left: 3px;
+      position: absolute;
+      transition: .4s;
+      width: 22px;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #0284c7;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(22px);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .header h1 {
+      color: var(--primary-color);
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: var(--text-sub);
+      margin-bottom: 40px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px 20px;
+      transition: background-color 0.4s ease, border-color 0.4s ease;
+    }
+
+    .card h3 {
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--text-sub);
+      font-size: 14px;
+    }
+
+    code {
+      background-color: var(--border-color);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--primary-color);
+    }
+
+    .btn {
+      background-color: var(--primary-btn);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- THEME SWITCHER TOGGLE -->
+  <div class="theme-switch-wrapper">
+    <span id="toggle-icon">🌙 Dark Mode</span>
+    <label class="theme-switch" for="checkbox">
+      <input type="checkbox" id="checkbox">
+      <div class="slider round"></div>
+    </label>
+  </div>
+
+  <main class="container">
+    <header class="header">
+      <h1>CSS Variables Mastery</h1>
+      <p>Dynamic Theme Switching using `:root` custom properties.</p>
+    </header>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Primary Color Token</h3>
+        <p>Uses <code>var(--primary-color)</code> for headings and button accents.</p>
+      </div>
+
+      <div class="card">
+        <h3>Surface Color Token</h3>
+        <p>Uses <code>var(--bg-card)</code> for adaptive background surfaces.</p>
+      </div>
+
+      <div class="card">
+        <h3>Text Color Token</h3>
+        <p>Uses <code>var(--text-main)</code> for seamless contrast switching.</p>
+      </div>
+    </div>
+
+    <button class="btn">Dynamic CSS Button</button>
+  </main>
+
+  <script>
+    const toggleSwitch = document.querySelector('#checkbox');
+    const toggleIcon = document.querySelector('#toggle-icon');
+
+    toggleSwitch.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'light');
+        toggleIcon.textContent = '☀️ Light Mode';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggleIcon.textContent = '🌙 Dark Mode';
+      }
+    });
+  </script>
+
+</body>
+</html>
